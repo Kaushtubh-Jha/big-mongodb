@@ -8,11 +8,14 @@ dbname = connection["local"]
 coll = dbname["employee"]
 
 # address from "Valley 345" to "Canyon 123"
-query = { "address": "Valley 345" }
+query = { "address": "Apple st 652" }
 udpate = { "$set": { "address": "Canyon 123" } }
 
-coll.update_one(query, udpate)
+y = coll.update_one(query, udpate)
 
-#print "customers" after the update:
+# print "employee" after the update:
 for x in coll.find():
   print(x)
+
+# updated count
+print(y.modified_count)
