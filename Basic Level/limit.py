@@ -8,7 +8,7 @@ dbname = connection["local"]
 coll = dbname["employee"]
 
 # return 5 data
-result = coll.find().limit(5)
+result = coll.find().limit(1)
 
 # print the result:
 for x in result:
